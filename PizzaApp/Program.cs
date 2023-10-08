@@ -44,4 +44,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+// 데이터베이스 시드
+app.CreateDbIfNotExists();
+
 app.Run();
