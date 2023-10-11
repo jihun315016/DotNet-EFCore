@@ -20,7 +20,8 @@ builder.Services.AddSwaggerGen();
 // -> 따라서 해당 클래스나 서비스에서 PizzaContext 인스턴스를 직접 생성하거나 관리할 필요 없이 이미 준비된 PizzaContext 인스턴스를 사용하여 작업할 수 있다.
 // -> 요약 : 데이터베이스에 작업할 수 있는 PizzaContext 인스턴스를 만들어서 그 객체가 필요한 곳에 자동으로 제공해주겠다는 의미
 // Data Source=ContosoPizza.db : SQLite 데이터베이스 연결 문자열 -> 데이터베이스 파일인 ContosoPizza.db과 연결
-builder.Services.AddSqlite<PizzaContext>("Data Source=ContosoPizza.db");
+builder.Services.AddSqlite<PizzaContext>("Data Source=db/ContosoPizza.db");
+builder.Services.AddSqlite<PromotionsContext>("Data Source=db/Promotions.db");
 builder.Services.AddScoped<PizzaService>();
 
 
