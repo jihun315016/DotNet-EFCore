@@ -23,6 +23,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSqlite<PizzaContext>("Data Source=db/ContosoPizza.db");
 builder.Services.AddSqlite<PromotionsContext>("Data Source=db/Promotions.db");
 builder.Services.AddScoped<PizzaService>();
+builder.Services.AddScoped<CouponService>();
 
 
 

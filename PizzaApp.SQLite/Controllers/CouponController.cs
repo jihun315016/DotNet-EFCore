@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using PizzaApp.SQLite.Data;
 using PizzaApp.SQLite.Models;
+using PizzaApp.SQLite.Services;
 
 namespace PizzaApp.SQLite.Controllers
 {
@@ -11,17 +12,17 @@ namespace PizzaApp.SQLite.Controllers
     [ApiController]
     public class CouponController : ControllerBase
     {
-        PromotionsContext _context;
+        CouponService _service;
 
-        public CouponController(PromotionsContext context)
+        public CouponController(CouponService service)
         {
-            _context = context;
+            _service = service;
         }
 
         [HttpGet]
-        public IEnumerable<Coupon> Get()
+        public IEnumerable<Coupon> GetAll()
         {
-            return _context.Coupons.AsNoTracking().ToList();
+            return _service.GetAll();
         }
     }
 }
