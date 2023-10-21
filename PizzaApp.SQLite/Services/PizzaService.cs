@@ -60,22 +60,6 @@ public class PizzaService
         _context.SaveChanges();
     }
 
-    public void UpdateSauce(int PizzaId, int SauceId)
-    {
-        // PizzaId 피자의 소스를 SauceId로 변경
-        var pizzaToUpdate = _context.Pizzas.Find(PizzaId);
-        var sauceToUpdate = _context.Sauces.Find(SauceId);
-
-        if (pizzaToUpdate is null || sauceToUpdate is null)
-        {
-            // 유효하지 않을 때 발생하는 예외
-            throw new InvalidOperationException("Pizza or sauce does not exist");
-        }
-
-        pizzaToUpdate.Sauce = sauceToUpdate;
-        _context.SaveChanges();
-    }
-
     public void DeleteById(int id)
     {
         var pizzaToDelete = _context.Pizzas.Find(id);
