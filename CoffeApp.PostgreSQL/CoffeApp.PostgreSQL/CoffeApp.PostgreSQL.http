@@ -1,0 +1,6 @@
+@CoffeApp.PostgreSQL_HostAddress = http://localhost:5186
+
+GET {{CoffeApp.PostgreSQL_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
